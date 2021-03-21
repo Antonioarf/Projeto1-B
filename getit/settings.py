@@ -25,7 +25,7 @@ SECRET_KEY = 'gz093w&k4r-&)4pl$u=cyumr(t^f6f#i9hyue)&-(wp)ge3%4$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['whispering-basin-41553.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['hidden-ridge-52501.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
