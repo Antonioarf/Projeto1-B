@@ -25,7 +25,7 @@ SECRET_KEY = 'gz093w&k4r-&)4pl$u=cyumr(t^f6f#i9hyue)&-(wp)ge3%4$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['hidden-ridge-52501.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['pure-dawn-86326.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -42,13 +42,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'getit.urls'

@@ -24,3 +24,10 @@ if __name__ == '__main__':
 
 # Creating app... done, ⬢ pure-dawn-86326
 # https://pure-dawn-86326.herokuapp.com/ | https://git.heroku.com/pure-dawn-86326.git
+
+
+# heroku	https://git.heroku.com/pure-dawn-86326.git (fetch)
+# heroku	https://git.heroku.com/pure-dawn-86326.git (push)
+# origin	https://github.com/Antonioarf/Projeto1-B.git (fetch)
+# origin	https://github.com/Antonioarf/Projeto1-B.git (push)
+
