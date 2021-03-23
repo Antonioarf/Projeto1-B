@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/borg/Desktop/4_SEMESTRE/4_SEMESTRE_INSPER/TecWeb/Projeto1-B/env"
+VIRTUAL_ENV="/home/borg/Desktop/4_SEMESTRE/4_SEMESTRE_INSPER/TecWeb/env/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

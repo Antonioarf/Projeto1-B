@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/borg/Desktop/4_SEMESTRE/4_SEMESTRE_INSPER/TecWeb/Projeto1-B/env"
+set -gx VIRTUAL_ENV "/home/borg/Desktop/4_SEMESTRE/4_SEMESTRE_INSPER/TecWeb/env/env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

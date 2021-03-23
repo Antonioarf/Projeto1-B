@@ -1,4 +1,4 @@
-#!/home/borg/Desktop/4_SEMESTRE/4_SEMESTRE_INSPER/TecWeb/Projeto1-B/env/bin/python3
+#!/home/borg/Desktop/4_SEMESTRE/4_SEMESTRE_INSPER/TecWeb/env/env/bin/python3
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
