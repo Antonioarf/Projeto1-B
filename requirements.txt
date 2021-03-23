@@ -1,4 +1,4 @@
-# actionlib==1.12.1
+actionlib==1.12.1
 angles==1.9.12
 asgiref==3.3.1
 base-local-planner==1.16.7
