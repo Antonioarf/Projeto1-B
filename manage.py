@@ -22,6 +22,5 @@ if __name__ == '__main__':
     main()
 
 
-#  ›   Warning: heroku update available from 7.49.0 to 7.51.0.
-# Creating app... done, ⬢ whispering-basin-41553
-# https://whispering-basin-41553.herokuapp.com/ | https://git.heroku.com/whispering-basin-41553.git
+# Creating app... done, ⬢ pure-dawn-86326
+# https://pure-dawn-86326.herokuapp.com/ | https://git.heroku.com/pure-dawn-86326.git
