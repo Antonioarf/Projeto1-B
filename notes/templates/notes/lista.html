@@ -1,0 +1,24 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- <img src="{% static 'notes/img/logo-getit.png' %}" /> -->
+<div class="appbar">
+  <img class="logo" src="{% static 'notes/img/logo-getit.png' %}" />  
+  <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+</div>
+
+<div>
+    <form action='/final/' method="post">
+        {% csrf_token %}
+        <h4>ESCOLHA UMA TAG</h4>
+        {% for tag in tags %}
+        <div><input type="radio" id="male" name="tag" value="{{ tag }}"><label for="{{ tag }}">{{ tag }}</label></div>
+        {% endfor %}
+
+
+      <button type="submit" name='mybtn2' value="tags">VEJA A LISTA</button>
+      </form>
+</div>
+
+{% endblock %}

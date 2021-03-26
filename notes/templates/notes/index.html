@@ -11,12 +11,20 @@
 <form method="post" class="form-card">
   {% csrf_token %}
   <input class="form-card-title" type="text" name="titulo" placeholder="Título"/>
-  <!-- <label for="detalhes">Detalhes</label> -->
-  <!-- <input id="detalhes" name="detalhes" /> -->
-  <!-- <input type="submit" /> -->
+  <input class="form-card-title" type="text" name="tag" placeholder="Insira a tag"/>
   <textarea class="autoresize" name="detalhes" placeholder="Digite o conteúdo..."></textarea>
+
   <button class="btn" type="submit">Criar</button>
 </form>
+
+
+
+<form action='/tags/' method="post">
+  {% csrf_token %}
+<button type="submit" name='mybtn2' value="tags">VEJA A LISTA</button>
+</form>
+
+
 
 <div class="card-container">
   {% for note in notes %}
@@ -37,4 +45,18 @@
   </div>
   {% endfor %}
 </div>
+<div>
+  <h4>Tags Criadas</h4>
+  {% for tag in tags %}
+  <h6>{{ tag }}</h6>
+  {% endfor %}
+</div>
 {% endblock %}
+
+  <!-- <div class="div_tag">
+  <div><input type="radio" id="male" name="tag" value="Tecweb"><label for="Tecweb">Tecweb</label></div>
+  <div><input type="radio" id="male" name="tag" value="Camadas"><label for="Camadas">Camadas</label></div>
+  <div><input type="radio" id="male" name="tag" value="Empretec"><label for="Empretec">Empretec</label></div>
+  <div><input type="radio" id="male" name="tag" value="ModCom"><label for="ModCom">ModCom</label></div>
+  <div><input type="radio" id="male" name="tag" value="Eletromag"><label for="Eletromag">Eletromag</label></div>
+  </div> -->

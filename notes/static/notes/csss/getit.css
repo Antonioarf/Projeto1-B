@@ -29,6 +29,19 @@ Algumas informações úteis e dicas:
   color: #2c2c2c;
   font-family: 'Permanent Marker', cursive;
 } */
+
+.div_tag{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around ;
+  background-color: #dcdcdc;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 7px;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 0.5%;
+}
+
 .appbar{
   left: 5%;
   top: 10%;
@@ -65,7 +78,7 @@ textarea {
   display: flex;
   flex-direction:column;
   width: 30%;
-  height: 140px;
+  height: 180px;
   margin: 2% auto;
   border-radius: 10px;
   
