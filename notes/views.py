@@ -28,7 +28,12 @@ def meio(request):
         return redirect('lista')
     else:
         lista = Note.objects.values_list("tag", flat = True).distinct()
-        return render(request, 'notes/lista.html',{"tags": lista})
+        if len(lista)==0:
+            erros = "Nenhuma Tag Criada"
+        else:
+            erros = ""
+        
+        return render(request, 'notes/lista.html',{"tags": lista, "erro":erros})
 
 #################################################
 

@@ -8,16 +8,17 @@
   <span class="subtitle">Como o Post-it, mas com outro verbo</span>
 </div>
 
-<form action='/tags/' method="post">
-    {% csrf_token %}
-    <h1 >Mostrando cards para tag: {{ tagg }}</h1>  
-    <button class="btn" value="tags" type="submit">Trocar tag</button>
-  </form>
 
-  <form action='/retorno/' method="post">
+<form action='/tags/' method="post" class="form-card2">
+  <h1 class="item_lista">Mostrando cards para: {{ tagg }}</h1> 
     {% csrf_token %}
-    <button class="btn" type="submit">Voltar</button>
-  </form>
+    <button class="btn" type="submit">Trocar tag</button>
+</form>
+
+<form action='/retorno/' method="post" class="form-card2">
+    {% csrf_token %}
+    <button class="btn" type="submit">Mostrar Todos os Cards</button>
+</form>
   
 
 <div class="card-container">

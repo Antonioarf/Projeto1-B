@@ -9,16 +9,23 @@
 </div>
 
 <div>
-    <form action='/final/' method="post" class="form-card2">
+    <form action='/final/' method="post" class="form-card2"  name="lista">
         {% csrf_token %}
-        <h4 class="item_lista">ESCOLHA UMA TAG</h4>
+        <h4 class="item_lista">ESCOLHA UMA TAG:</h4>
+        <h4 class="item_lista" id="erro">{{ erro }}</h4>
+
         {% for tag in tags %}
-        <div><input type="radio" id="male" name="tag" value="{{ tag }}"><label class="item_lista" for="{{ tag }}">{{ tag }}</label></div>
+        <div><input type="radio" id="male" name="tag" value="{{ tag }}" required><label class="item_lista" for="{{ tag }}">{{ tag }}</label></div>
         {% endfor %}
 
 
-      <button class="btn" type="submit">VEJA A LISTA</button>
+      <button class="btn" type="submit" id="confirma">Mostrar</button>
       </form>
+      <form action='/retorno/' method="post" class="form-card2">
+        {% csrf_token %}
+        <button class="btn" type="submit">Voltar</button>
+    </form>
+      
 </div>
 
 {% endblock %}

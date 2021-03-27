@@ -20,7 +20,6 @@ function func2(nome1,nome2,nome3){
 }
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
 
   // Faz textarea aumentar a altura automaticamente
@@ -36,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     textarea.addEventListener("input", autoResize, false);
   }
 
+
   // Sorteia classes de cores aleatoriamente para os cards
   let cards = document.getElementsByClassName("card");
   for (let i = 0; i < cards.length; i++) {
@@ -44,5 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
       1,
       5
     )} card-rotation-${getRandomInt(1, 6)}`;
+  }
+  console.log("testeeeeee")
+  // console.log( 'lista'.getElementsByTagName("input").length)
+  if (document.getElementById("erro").innerHTML == "Nenhuma Tag Criada"){
+    document.getElementById("confirma").disabled = true;
   }
 });
