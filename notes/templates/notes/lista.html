@@ -9,15 +9,15 @@
 </div>
 
 <div>
-    <form action='/final/' method="post">
+    <form action='/final/' method="post" class="form-card2">
         {% csrf_token %}
-        <h4>ESCOLHA UMA TAG</h4>
+        <h4 class="item_lista">ESCOLHA UMA TAG</h4>
         {% for tag in tags %}
-        <div><input type="radio" id="male" name="tag" value="{{ tag }}"><label for="{{ tag }}">{{ tag }}</label></div>
+        <div><input type="radio" id="male" name="tag" value="{{ tag }}"><label class="item_lista" for="{{ tag }}">{{ tag }}</label></div>
         {% endfor %}
 
 
-      <button type="submit" name='mybtn2' value="tags">VEJA A LISTA</button>
+      <button class="btn" type="submit">VEJA A LISTA</button>
       </form>
 </div>
 

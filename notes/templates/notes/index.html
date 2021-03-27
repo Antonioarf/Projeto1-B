@@ -7,7 +7,6 @@
   <img class="logo" src="{% static 'notes/img/logo-getit.png' %}" />  
   <span class="subtitle">Como o Post-it, mas com outro verbo</span>
 </div>
-
 <form method="post" class="form-card">
   {% csrf_token %}
   <input class="form-card-title" type="text" name="titulo" placeholder="Título"/>
@@ -17,14 +16,11 @@
   <button class="btn" type="submit">Criar</button>
 </form>
 
-
-
-<form action='/tags/' method="post">
+<form action='/tags/' method="post" class="form-card2">
   {% csrf_token %}
-<button type="submit" name='mybtn2' value="tags">VEJA A LISTA</button>
+<button class="btn" type="submit">VEJA A LISTA</button>
 </form>
-
-
+</div>
 
 <div class="card-container">
   {% for note in notes %}
@@ -45,12 +41,7 @@
   </div>
   {% endfor %}
 </div>
-<div>
-  <h4>Tags Criadas</h4>
-  {% for tag in tags %}
-  <h6>{{ tag }}</h6>
-  {% endfor %}
-</div>
+
 {% endblock %}
 
   <!-- <div class="div_tag">
