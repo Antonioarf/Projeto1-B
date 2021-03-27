@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'gz093w&k4r-&)4pl$u=cyumr(t^f6f#i9hyue)&-(wp)ge3%4$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['pure-dawn-86326.herokuapp.com', 'localhost', '127.0.0.1']
 
