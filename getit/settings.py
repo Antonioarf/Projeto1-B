@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['pure-dawn-86326.herokuapp.com', 'localhost', '127.0.0.1', '0.0.0.0']
 
-
+# git remote add heroku  https://git.heroku.com/pure-dawn-86326.git
 # Application definition
 
 INSTALLED_APPS = [
@@ -78,16 +78,16 @@ WSGI_APPLICATION = 'getit.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 ##################### DATABASE PRODUCAO POSTGRESS #####################
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'getit',
-        'USER': 'getituser',
-        'PASSWORD': 'getitsenha',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'getit',
+#         'USER': 'getituser',
+#         'PASSWORD': 'getitsenha',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 ##################### DATABASE TESTES SQLITE #####################
 # DATABASES = {
 #     'default': {
@@ -97,13 +97,13 @@ DATABASES = {
 # }
 
 ##################### HEROKU #####################
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         default='postgresql://localhost/getit?user=getituser&password=getitsenha',
-#         conn_max_age=600,
-#         ssl_require=not DEBUG
-#     )
-# }
+DATABASES = {
+    'default': dj_database_url.config(
+        default='postgresql://localhost/getit?user=getituser&password=getitsenha',
+        conn_max_age=600,
+        ssl_require=not DEBUG
+    )
+}
 
 
 # Password validation
