@@ -1,16 +1,21 @@
 {% extends "notes/base.html" %}
 {% load static %}
-
 {% block content %}
+<script type="text/javascript" src="{% static 'notes/csss/getit.js' %}"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <!-- <img src="{% static 'notes/img/logo-getit.png' %}" /> -->
 <div class="appbar">
-  <img class="logo" src="{% static 'notes/img/logo-getit.png' %}" />  
-  <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+  <a href="{% url 'index' %}"><img class="logo" src="{% static 'notes/img/logo-getit.png' %}" /></a>
+<div class = 'teste'><p class="subtitle">Como o Post-it, {{ user.username }} </p>
+  <p class="subtitle"><a href="{% url 'login' %}">Log Out</a></p>
 </div>
+</div>
+<div>
 <form method="post" class="form-card">
   {% csrf_token %}
   <input class="form-card-title" type="text" name="titulo" placeholder="Título"/>
   <input class="form-card-title" type="text" name="tag" placeholder="Insira a tag"/>
+  <div class="form-card-title" >prazo: <input type="date" id="data" name="prazo"> </div>
   <textarea class="autoresize" name="detalhes" placeholder="Digite o conteúdo..."></textarea>
 
   <button class="btn" type="submit">Criar</button>
@@ -21,26 +26,46 @@
 <button class="btn" type="submit">Filtrar Por Tag</button>
 </form>
 </div>
-
 <div class="card-container">
   {% for note in notes %}
+  
   <div class="card" id="card{{ note.id }}" >
     <form class="from" method="post">
       {% csrf_token %}
+
+    <p class="card-title"> Dono(s): {%for nome in note.users.all%} {{ nome }} {% endfor %} </p>
     <h3 class="card-title" id="tx1{{ note.id }}" onclick="func1('tx1{{ note.id }}','inp1{{ note.id }}','card{{ note.id }}')" >{{ note.title }}</h3>
     <input class="card-title-inp" type="text" name="titulo" value="{{ note.title }}" id="inp1{{ note.id }}"/>
-    <input class="card-title-inp" type="text" name="detalhes" id="inp2{{ note.id }}" value="{{ note.content }}"/>
+    <input class="card-title-inp" type="text" name="detalhes" value="{{ note.content }}"id="inp2{{ note.id }}"/>
     <div class="card-content">
       <p id="tx2{{ note.id }}" onclick="func2('tx2{{ note.id }}','inp2{{ note.id }}','card{{ note.id }}')">{{ note.content }}</p>
     </div>
+    Prazo:<h3 class='card-date' id="tx3{{ note.id }}" onclick="func1('tx3{{ note.id }}','inp3{{ note.id }}','card{{ note.id }}')">{{note.prazo}}</h3>
+    <div class="card-title-inp" id="inp3{{ note.id }}">Novo prazo: <input type="date" id="data" name="prazo" value="{{ note.prazo }}"> </div>
+    
+    
+    
     <div class="div_botao">
       <button class="botao1" type="submit" name="atualizar" value="{{ note.id }}" id="update">Atualizar</button>
       <button class="botao1" type="submit" name= "apagar" value="{{ note.id }}">Apagar</button>
-      </div>
+      <button class="botao1" type="button" name= "share" value="{{ note.id }}" onclick="func3('{{ note.id }}')" >Share</button>
+      <button class="botao1 botao_mudar" type="submit" name= "status" value="{{ note.id }}"> Feito: {{note.feito}}</button>
+    </div>
       </form>
   </div>
   {% endfor %}
 </div>
+
+<form method="post" class="form-card popup" id="myPopup" name="myForms" >
+  {% csrf_token %}
+  <br>
+  <h1>Cuidado: campo sensivel a letras maiuscuas</h1>
+  <input class="form-card-title" type="text" name="usuario" placeholder="Usuario"/>
+  <input type="hidden" id="idid" name="custId" value="">
+  <input type="hidden" id="idid" name="custId" value="{{ user.password }} ">
+  <button class="btn" type="button" onclick="func4()">Compartilhar</button>
+</form>
+
 
 {% endblock %}
 

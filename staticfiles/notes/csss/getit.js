@@ -19,7 +19,13 @@ function func2(nome1,nome2,nome3){
   console.log("entrouuuuuuuuuu2")
 }
 
-
+function func3(){
+  // document.getElementById(nome1).style.display = "none";
+  // document.getElementById(nome2).style.display = "block";
+  // document.getElementById(nome3).style.transform = "none";
+  // document.getElementById("update").disable = false;
+  console.log("entrouuuuuuuuuu2")
+}
 
 document.addEventListener("DOMContentLoaded", function () {
 

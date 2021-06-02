@@ -29,6 +29,28 @@ Algumas informações úteis e dicas:
   color: #2c2c2c;
   font-family: 'Permanent Marker', cursive;
 } */
+
+/* .form-mud{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+.item_lista{
+  /* flex-wrap:wrap; */
+  /* font-weight: bold; */
+  font-size: 1.5em;
+  margin: 10px 10px 15px 10px;
+  font-family: 'Permanent Marker', cursive;
+}
+.item_lista2{
+  /* flex-wrap:wrap; */
+  font-weight: bold;
+  font-size: 2em;
+  margin: 10px 10px 15px 10px;
+  font-family: 'Roboto', sans-serif; 
+  font-family: 'Permanent Marker', cursive;
+
+}
 .appbar{
   left: 5%;
   top: 10%;
@@ -37,7 +59,7 @@ Algumas informações úteis e dicas:
   display: flex;
   align-items: center;
   box-shadow: 1px 0px 20px black;
-  background-color: #ff0000;
+  background-color: #f7d736;
 }
 
 .logo{
@@ -59,17 +81,25 @@ textarea {
   justify-content: center;
   flex-wrap: wrap;
 }
+.form-card2{
+  box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.3);
+  justify-content:space-between;
+  display: flex;
+  flex-direction:column;
+  width: 30%;
+  margin: 2% auto;
+  border-radius: 10px;
+}
 .form-card{
   box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.3);
   justify-content:space-between;
   display: flex;
   flex-direction:column;
   width: 30%;
-  height: 140px;
+  height: 250px;
   margin: 2% auto;
   border-radius: 10px;
-  
-
+  background-color: black;
 }
 
 .form-card-title{
@@ -227,6 +257,7 @@ textarea {
 
 /* Você pode usar o CSS comentado abaixo, se ajudar */
 /* Fonte: https://codepen.io/CrisWoler/pen/ogXBLj */
+
  .btn {
    margin: 0.5em;
   position: relative;

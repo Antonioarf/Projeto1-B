@@ -1,0 +1,15 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'notes/csss/login.css' %}"  />
+  <div class="appbar">
+    <img class="logo" src="{% static 'notes/img/logo-getit.png' %}" />  
+    <span class="subtitle">Como o Post-it</span>
+  </div>
+  <div>
+
+{% block content %}
+  <form method="post" class="form-card2">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn" type="submit">Sign Up</button>
+  </form>
+{% endblock %}

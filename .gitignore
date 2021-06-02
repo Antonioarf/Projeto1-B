@@ -1,4 +1,4 @@
-env/
+dev/
 *.egg-info
 *.pot
 *.py[co]

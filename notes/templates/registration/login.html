@@ -1,0 +1,19 @@
+<!-- templates/registration/login.html -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'notes/csss/login.css' %}"  />
+  <div class="appbar">
+    <img class="logo" src="{% static 'notes/img/logo-getit.png' %}" />  
+    <span class="subtitle">Como o Post-it</span>
+  </div>
+  <div>
+  <form method="post" class="form-card">
+    {% csrf_token %}
+    {{ form.as_p }}
+  <button class="btn" type="submit">Log In</button>
+  <button class="btn"><a href="{% url 'signup' %}">Crie uma conta</a></button>
+  </form>
+  
+  
+  <!-- <p class="subtitle"><a href="{% url 'login' %}">Log Out</a></p> -->
+  </div>
+</form>

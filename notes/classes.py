@@ -6,3 +6,5 @@ class Note:
     title: str = None
     content: str = ''
     tag:str = ''
+    prazo: str = ''
+    feito:bool = None

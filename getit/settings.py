@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+# https://learndjango.com/tutorials/django-login-and-logout-tutorial
+
 
 from pathlib import Path
 import dj_database_url
@@ -23,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'gz093w&k4r-&)4pl$u=cyumr(t^f6f#i9hyue)&-(wp)ge3%4$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['pure-dawn-86326.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['pure-dawn-86326.herokuapp.com', 'localhost', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'notes.apps.NotesConfig',
 ]
 
@@ -56,7 +59,7 @@ ROOT_URLCONF = 'getit.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [str(BASE_DIR.joinpath('templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,7 +77,7 @@ WSGI_APPLICATION = 'getit.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+##################### DATABASE PRODUCAO POSTGRESS #####################
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -85,13 +88,22 @@ WSGI_APPLICATION = 'getit.wsgi.application'
 #         'PORT': '5432',
 #     }
 # }
+##################### DATABASE TESTES SQLITE #####################
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://localhost/getit?user=getituser&password=getitsenha',
-        conn_max_age=600,
-        ssl_require=not DEBUG
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+##################### JA NEM LEMBRO #####################
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default='postgresql://localhost/getit?user=getituser&password=getitsenha',
+#         conn_max_age=600,
+#         ssl_require=not DEBUG
+#     )
+# }
 
 
 # Password validation
@@ -133,3 +145,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+LOGIN_REDIRECT_URL = '/'
