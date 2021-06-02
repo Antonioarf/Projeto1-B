@@ -79,7 +79,7 @@ def index(request):
             Note.objects.create(title = title,content = content, tag = tag, prazo = prazo_html)
             obj = Note.objects.last()
             obj.users.add(User.objects.get(username = user))
-        return redirect('index', nome = user)
+        return redirect('index')
     else:
         try:
             user = request.user.username
