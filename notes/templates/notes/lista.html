@@ -2,10 +2,13 @@
 {% load static %}
 
 {% block content %}
+<script type="text/javascript" src="{% static 'notes/csss/lista.js' %}"></script>
 <!-- <img src="{% static 'notes/img/logo-getit.png' %}" /> -->
 <div class="appbar">
-  <img class="logo" src="{% static 'notes/img/logo-getit.png' %}" />  
-  <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+  <a href="{% url 'index' %}"><img class="logo" src="{% static 'notes/img/logo-getit.png' %}" /></a>
+<div class = 'teste'><p class="subtitle">Bem Vindo, {{ user.username }} </p>
+  <p class="subtitle"><a href="{% url 'login' %}">Log Out</a></p>
+</div>
 </div>
 
 <div>

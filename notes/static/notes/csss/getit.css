@@ -35,6 +35,16 @@ Algumas informações úteis e dicas:
   flex-direction: column;
   justify-content: center;
 } */
+.sumir{
+  display: none;
+}
+
+.teste{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .item_lista{
   /* flex-wrap:wrap; */
   /* font-weight: bold; */
@@ -96,7 +106,7 @@ textarea {
   display: flex;
   flex-direction:column;
   width: 30%;
-  height: 180px;
+  height: 250px;
   margin: 2% auto;
   border-radius: 10px;
 }
@@ -135,10 +145,10 @@ textarea {
   justify-content: space-between;
   flex-direction:column;
 }
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 .card{
   font-family: 'Permanent Marker', cursive;
-  width:15.5%;
+  width:17%;
   margin-top: 5%;
   border-radius: 10px;
   margin: 1% auto;
@@ -147,7 +157,7 @@ textarea {
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.4);
   justify-content: space-between;
 }
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 .card-title{
   /* flex-wrap:wrap; */
   font-weight: bold;
@@ -195,7 +205,9 @@ textarea {
 }
 .div_botao{
   display: flex;
+  margin-top: 5%;
   margin-bottom: 5% ;
+  flex-wrap: wrap;
 }
 .card-title-inp{
   align-self:center ;
@@ -303,3 +315,17 @@ textarea {
 
   transition: width 0.2s ease-out, padding-top 0.2s ease-out;
 } 
+
+
+.popup{
+  display: none;
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+  /* transform: scale(1.5); */
+  transform: scale(1.5) translate(-50%, -75%) ;
+  background-color: #b89f33 ;
+  
+}
+
+/* #bfb895 */

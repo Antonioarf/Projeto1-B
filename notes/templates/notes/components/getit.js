@@ -16,7 +16,12 @@ function func2(nome1,nome2){
   // document.getElementById("update").disable = false;
   console.log("entrouuuuuuuuuu2")
 }
-
+function func3(nome1,nome2){
+  document.getElementById(nome1).style.display = "none";
+  document.getElementById(nome2).style.display = "block";
+  // document.getElementById("update").disable = false;
+  console.log("entrouuuuuuuuuu3")
+}
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -43,4 +48,12 @@ document.addEventListener("DOMContentLoaded", function () {
       5
     )} card-rotation-${getRandomInt(1, 6)}`;
   }
+  let dates = document.getElementsByClassName("card-date");
+  // for (let i = 0; i < cards.length; i++) {
+  //   dat.innerHTML =  " fdfdffdf"//dat.innerHTML.split("").reverse().join("")
+  // }
+  dates.forEach(function (item) {
+    item.innerHTML =  " fdfdffdf";//dat.innerHTML.split("").reverse().join("")
+    console.log(item);
+  });
 });

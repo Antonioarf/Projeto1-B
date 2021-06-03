@@ -64,12 +64,10 @@ textarea {
   justify-content:space-between;
   display: flex;
   flex-direction:column;
-  width: 30%;
-  height: 140px;
+  width: 45%;
+  height: 250px;
   margin: 2% auto;
   border-radius: 10px;
-  
-
 }
 
 .form-card-title{
