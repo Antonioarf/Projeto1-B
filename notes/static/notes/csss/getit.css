@@ -40,8 +40,9 @@ Algumas informações úteis e dicas:
 }
 
 .teste{
+  /* margin-right: 3%; */
   display: flex;
-  width: 100%;
+  width: 90%;
   justify-content: space-between;
 }
 
