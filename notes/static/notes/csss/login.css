@@ -1,3 +1,13 @@
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1; /* Firefox */
+}
+body {
+  background-color: #847C7C;
+}
+input {
+  background-color: #847C7C;
+}
 .appbar{
   left: 5%;
   top: 10%;
@@ -6,7 +16,7 @@
   display: flex;
   align-items: center;
   box-shadow: 1px 0px 20px black;
-  background-color: #f7d736;
+  background-color: #B72936;
 }
 .logo{
   margin: 0.5rem;
@@ -36,7 +46,7 @@
   outline: none;
   border-radius: 7px;
   /* box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2); */
-  background-color: #f7d736;
+  background-color: #B72936;
 
   transition: background-color 0.3s;
 }

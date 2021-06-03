@@ -7,7 +7,7 @@ Algumas informações úteis e dicas:
     Tons de amarelo:
       #e4fc2b
       #e0d426
-      #f7d736
+      #B72936
       #e0af26
       #fcb02b
     Tons de cinza:
@@ -35,6 +35,14 @@ Algumas informações úteis e dicas:
   flex-direction: column;
   justify-content: center;
 } */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1; /* Firefox */
+}
+body {
+  background-color: #847C7C;
+}
+
 .sumir{
   display: none;
 }
@@ -69,7 +77,7 @@ Algumas informações úteis e dicas:
   display: flex;
   align-items: center;
   box-shadow: 1px 0px 20px black;
-  background-color: #f7d736;
+  background-color: #B72936;
 }
 
 .logo{
@@ -109,6 +117,7 @@ textarea {
   height: 250px;
   margin: 2% auto;
   border-radius: 10px;
+  
 }
 
 .form-card-title{
@@ -127,6 +136,7 @@ textarea {
   border: 0px;
   font-size: 0.9em;
   margin-left: 2.5%;
+  background-color: #847C7C;
 }
 
 .card-container{
@@ -224,28 +234,28 @@ textarea {
 
 
 .card-color-1{
-  background:#ead3a7;
+  background:#323538;
   
 }
 
 .card-color-2{
-  background:#9de0f5;
+  background:#B72936;
 }
 
 .card-color-3{
-  background:#ef89ba;
+  background:#F0EFF0;
 }
 
 .card-color-4{
-  background:#abe9c1;
+  background:#b37d82;
 }
 
 .card-color-5{
-  background:#fae890;
+  background:#B72936;
 }
 
 .card-rotation-1{
-  transform: rotate(-10deg);
+  transform: rotate(-7deg);
 }
 
 .card-rotation-2{
@@ -261,7 +271,7 @@ textarea {
 }
 
 .card-rotation-5{
-  transform: rotate(10deg);
+  transform: rotate(7deg);
 }
 
 
@@ -279,7 +289,7 @@ textarea {
   outline: none;
   border-radius: 7px;
   /* box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2); */
-  background-color: #f7d736;
+  background-color: #B72936;
 
   transition: background-color 0.3s;
 }
