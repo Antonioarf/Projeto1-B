@@ -6,7 +6,9 @@
 <!-- <img src="{% static 'notes/img/logo-getit.png' %}" /> -->
 <div class="appbar">
   <a href="{% url 'index' %}"><img class="logo" src="{% static 'notes/img/logo-getit.png' %}" /></a>
-  <span class="subtitle">Como o Post-it, {{ user.username }}</span>
+<div class = 'teste'><p class="subtitle">Bem Vindo, {{ user.username }} </p>
+  <p class="subtitle"><a href="{% url 'login' %}">Log Out</a></p>
+</div>
 </div>
 
 <div>

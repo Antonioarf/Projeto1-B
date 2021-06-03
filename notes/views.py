@@ -12,7 +12,6 @@ from django.views import generic
 from django.contrib.auth import get_user_model
 
 
-
 # SUAS OUTRAS FUNÇÕES CONTINUAM AQUI
 
 @api_view(['GET', 'POST'])
@@ -26,30 +25,35 @@ def api_users(request):
 
 @api_view(['GET', 'POST'])
 def api_share(request):
+    print("2121212121212121212212122")
+    obj = Note.objects.get(id=int(request.data['id']))
+    print(obj)
+    print(request.data)
     User = get_user_model()
+    obj.users.add(User.objects.get(username = request.data['nome']))
     users = [u.username for u in User.objects.all()]
-    print(type(users))
-    print(users)
-    if request.method == 'POST':
-        print(request.POST)
     return Response(users)
 
 #################################################
 
 class SignUpView(generic.CreateView):
     form_class = UserCreationForm
+    # Token.objects.create(user=instance)
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
+
+
 
 #################################################
 
 def index(request):
-    # print("11111111111111111111")
+    print("11111111111111111111")
+    teste =request.__dict__
+    print(teste.keys())
+    print(type(teste['user']))
     User = get_user_model()
     users = User.objects.all()
-    # for u in users:
-    #     print(u)
-    # print('111111111111111111111')
+
     if request.method == 'POST':
         title = request.POST.get('titulo')
         content = request.POST.get('detalhes')
@@ -86,6 +90,8 @@ def index(request):
             all_notes = Note.objects.filter(users = User.objects.get(username = user))
         except:
             all_notes = Note.objects.all()
+            # tok = Token.objects.get_or_create(user=request.user)
+
         return render(request, 'notes/index.html', {'notes': all_notes})
 
 #################################################

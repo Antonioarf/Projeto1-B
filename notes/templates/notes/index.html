@@ -6,7 +6,7 @@
 <!-- <img src="{% static 'notes/img/logo-getit.png' %}" /> -->
 <div class="appbar">
   <a href="{% url 'index' %}"><img class="logo" src="{% static 'notes/img/logo-getit.png' %}" /></a>
-<div class = 'teste'><p class="subtitle">Como o Post-it, {{ user.username }} </p>
+<div class = 'teste'><p class="subtitle">Bem Vindo, {{ user.username }} </p>
   <p class="subtitle"><a href="{% url 'login' %}">Log Out</a></p>
 </div>
 </div>
@@ -56,17 +56,18 @@
   {% endfor %}
 </div>
 
-<form method="post" class="form-card popup" id="myPopup" name="myForms" >
+<form class="form-card popup" id="myPopup" name="myForms" >
   {% csrf_token %}
   <br>
   <h1>Cuidado: campo sensivel a letras maiuscuas</h1>
   <input class="form-card-title" type="text" name="usuario" placeholder="Usuario"/>
   <input type="hidden" id="idid" name="custId" value="">
-  <input type="hidden" id="idid" name="custId" value="{{ user.password }} ">
   <button class="btn" type="button" onclick="func4()">Compartilhar</button>
+  <input type="submit" disabled name="proseguir" class='sumir'>
 </form>
 
-
+<p id="senha" class="sumir">{{user.password}}</p>
+<p id="nomee" class="sumir">{{user.username}}</p>
 {% endblock %}
 
   <!-- <div class="div_tag">

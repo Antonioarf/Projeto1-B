@@ -3,13 +3,15 @@
 
 {% block content %}
 <script type="text/javascript" src="{% static 'notes/csss/getit.js' %}"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 <!-- <img src="{% static 'notes/img/logo-getit.png' %}" /> -->
 <div class="appbar">
   <a href="{% url 'index' %}"><img class="logo" src="{% static 'notes/img/logo-getit.png' %}" /></a>
-  <span class="subtitle">Como o Post-it, {{ user.username }}</span>
+<div class = 'teste'><p class="subtitle">Bem Vindo, {{ user.username }} </p>
+  <p class="subtitle"><a href="{% url 'login' %}">Log Out</a></p>
 </div>
-
+</div>
 
 <form action='/tags/' method="post" class="form-card2">
   <h1 class="item_lista">Mostrando cards para: {{ tagg }}</h1> 
@@ -25,9 +27,12 @@
 
 <div class="card-container">
   {% for note in notes %}
+  
   <div class="card" id="card{{ note.id }}" >
     <form class="from" method="post">
       {% csrf_token %}
+
+    <p class="card-title"> Dono(s): {%for nome in note.users.all%} {{ nome }} {% endfor %} </p>
     <h3 class="card-title" id="tx1{{ note.id }}" onclick="func1('tx1{{ note.id }}','inp1{{ note.id }}','card{{ note.id }}')" >{{ note.title }}</h3>
     <input class="card-title-inp" type="text" name="titulo" value="{{ note.title }}" id="inp1{{ note.id }}"/>
     <input class="card-title-inp" type="text" name="detalhes" value="{{ note.content }}"id="inp2{{ note.id }}"/>
@@ -42,13 +47,26 @@
     <div class="div_botao">
       <button class="botao1" type="submit" name="atualizar" value="{{ note.id }}" id="update">Atualizar</button>
       <button class="botao1" type="submit" name= "apagar" value="{{ note.id }}">Apagar</button>
-      <button  class="botao1 botao_mudar" type="submit" name= "status" value="{{ note.id }}"> Feito: {{note.feito}}</button>
+      <button class="botao1" type="button" name= "share" value="{{ note.id }}" onclick="func3('{{ note.id }}')" >Share</button>
+      <button class="botao1 botao_mudar" type="submit" name= "status" value="{{ note.id }}"> Feito: {{note.feito}}</button>
     </div>
       </form>
   </div>
   {% endfor %}
-  </div>
+</div>
 
+<form class="form-card popup" id="myPopup" name="myForms" >
+  {% csrf_token %}
+  <br>
+  <h1>Cuidado: campo sensivel a letras maiuscuas</h1>
+  <input class="form-card-title" type="text" name="usuario" placeholder="Usuario"/>
+  <input type="hidden" id="idid" name="custId" value="">
+  <button class="btn" type="button" onclick="func4()">Compartilhar</button>
+  <input type="submit" disabled name="proseguir" class='sumir'>
+</form>
+
+<p id="senha" class="sumir">{{user.password}}</p>
+<p id="nomee" class="sumir">{{user.username}}</p>
 {% endblock %}
 
 
