@@ -35,8 +35,13 @@ Algumas informações úteis e dicas:
   flex-direction: column;
   justify-content: center;
 } */
+.sumir{
+  display: none;
+}
+
 .teste{
   display: flex;
+  width: 95%;
   justify-content: space-between;
 }
 

@@ -36,13 +36,24 @@ async function func4(){
   console.log(lista.data)
   var x = document.forms["myForms"]["usuario"].value;
   var id = document.forms["myForms"]["custId"].value;
+  console.log("id");
+  console.log(id)
+  var nome = document.getElementById('nomee').innerHTML ;
+  var senha = document.getElementById('senha').innerHTML;
+  console.log(nome);
+  console.log(senha);
+
   if (lista.data.includes(x)) {
-    const options1 = {headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}};
-    // lista = await axios.post('http://127.0.0.1:8000/api/share/' );
-    tes =  axios.post('http://127.0.0.1:8000/api/share/' ,{nome :x, id :id  } , options1);
-    console.log(tes)
+    console.log("teste_token");
+    options1 = {headers: {username:"antonioF", password:'Fonseca01'}};
+    resp = await axios.post('http://127.0.0.1:8000/api-token-auth/' ,`username=antonioF&password=Fonseca01`,options1)
+    console.log("finaaaallll")
+    options1 = {headers: resp.data};
+    resp2 = await axios.post('http://127.0.0.1:8000/api/share/' ,{nome :x, id :id  } , options1)
+    console.log(resp2)
     alert("Nota compartilhada com sucesos")
     document.getElementById("myPopup").style.display = 'none';
+
   }
   else {
     alert("Usuario nao encontrado");
@@ -64,7 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     textarea.addEventListener("input", autoResize, false);
   }
-
 
   // Sorteia classes de cores aleatoriamente para os cards
   let cards = document.getElementsByClassName("card");
@@ -104,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 });
+
 
 
 });
