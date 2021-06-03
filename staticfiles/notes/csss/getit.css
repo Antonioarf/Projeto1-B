@@ -41,7 +41,7 @@ Algumas informações úteis e dicas:
 
 .teste{
   display: flex;
-  width: 95%;
+  width: 90%;
   justify-content: space-between;
 }
 
@@ -318,14 +318,23 @@ textarea {
 
 
 .popup{
+  width: 20%;
+  height: 150px;
   display: none;
   position: fixed; /* or absolute */
   top: 50%;
   left: 50%;
   /* transform: scale(1.5); */
-  transform: scale(1.5) translate(-50%, -75%) ;
-  background-color: #b89f33 ;
-  
+  transform:  translate(-50%, -75%) ;
+  padding: 2%;
+  border: black;
+  border-style: solid;
+  background-color: white;
+}
+.share{
+  border: black;
+  border-style: solid;
+  width: 100%;
 }
 
 /* #bfb895 */

@@ -32,7 +32,6 @@
     <form class="from" method="post">
       {% csrf_token %}
 
-    <p class="card-title"> Dono(s): {%for nome in note.users.all%} {{ nome }} {% endfor %} </p>
     <h3 class="card-title" id="tx1{{ note.id }}" onclick="func1('tx1{{ note.id }}','inp1{{ note.id }}','card{{ note.id }}')" >{{ note.title }}</h3>
     <input class="card-title-inp" type="text" name="titulo" value="{{ note.title }}" id="inp1{{ note.id }}"/>
     <input class="card-title-inp" type="text" name="detalhes" value="{{ note.content }}"id="inp2{{ note.id }}"/>
@@ -41,7 +40,8 @@
     </div>
     Prazo:<h3 class='card-date' id="tx3{{ note.id }}" onclick="func1('tx3{{ note.id }}','inp3{{ note.id }}','card{{ note.id }}')">{{note.prazo}}</h3>
     <div class="card-title-inp" id="inp3{{ note.id }}">Novo prazo: <input type="date" id="data" name="prazo" value="{{ note.prazo }}"> </div>
-    
+    <p class="card-contentdzb"> Dono(s): {%for nome in note.users.all%} {{ nome }} {% endfor %} </p>
+
     
     
     <div class="div_botao">
@@ -61,16 +61,10 @@
   <h1>Cuidado: campo sensivel a letras maiuscuas</h1>
   <input class="form-card-title" type="text" name="usuario" placeholder="Usuario"/>
   <input type="hidden" id="idid" name="custId" value="">
-  <button class="btn" type="button" onclick="func4()">Compartilhar</button>
+  <button class="btn share" type="button" onclick="func4()">Compartilhar</button>
   <input type="submit" disabled name="proseguir" class='sumir'>
 </form>
 
-<p id="senha" class="sumir">{{user.password}}</p>
 <p id="nomee" class="sumir">{{user.username}}</p>
+<p id="token" class="sumir">{{ token }}</p>
 {% endblock %}
-
-
-<!-- <form action='/tags/' method="post">
-    {% csrf_token %}
-  <button type="submit" name='mybtn2' value="tags">VEJA A LISTA</button>
-  </form> -->

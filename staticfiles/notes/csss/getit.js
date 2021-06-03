@@ -23,16 +23,18 @@ function func2(nome1,nome2,nome3){
   // document.getElementById("update").disable = false;
   console.log("entrouuuuuuuuuu2")
 }
-
 function func3(inp){
   document.getElementById("myPopup").style.display = 'block';
+  // document.getElementById("myPopup").className += ` ${document.getElementById(`card${inp}`).className.split(" ")[1]}`;
   document.getElementById("idid").value = inp;
   console.log(inp);
+  console.log(document.getElementById("myPopup").className);
 }
 
 async function func4(){
   console.log("12345678901234567890")
   lista = await axios.get('http://127.0.0.1:8000/api/users/' );
+  // lista = await axios.get('https://pure-dawn-86326.herokuapp.com/api/users/' );
   console.log(lista.data)
   var x = document.forms["myForms"]["usuario"].value;
   var id = document.forms["myForms"]["custId"].value;
@@ -47,8 +49,10 @@ async function func4(){
     console.log("teste_token");
     options1 = {headers: {username:"antonioF", password:'Fonseca01'}};
     resp = await axios.post('http://127.0.0.1:8000/api-token-auth/' ,`username=antonioF&password=Fonseca01`,options1)
+    // resp = await axios.post('https://pure-dawn-86326.herokuapp.com/api-token-auth/' ,`username=antonioF&password=Fonseca01`,options1)
     console.log("finaaaallll")
     options1 = {headers: resp.data};
+    resp2 = await axios.post('https://pure-dawn-86326.herokuapp.com/api/share/' ,{nome :x, id :id  } , options1)
     resp2 = await axios.post('http://127.0.0.1:8000/api/share/' ,{nome :x, id :id  } , options1)
     console.log(resp2)
     alert("Nota compartilhada com sucesos")
@@ -85,18 +89,14 @@ document.addEventListener("DOMContentLoaded", function () {
       5
     )} card-rotation-${getRandomInt(1, 6)}`;
   }
-  console.log("testeeeeee")
 
   let botoes = document.getElementsByClassName("botao_mudar");
   Array.prototype.forEach.call(botoes, function(item) {
-    console.log("@@@@@@@@@@@@@@@@@@@@")
       if  (item.innerHTML == " Feito: True" ){
         item.innerHTML = "Concluido";
         item.style.color = "blue";
-        console.log("$$$$$$$$$$$$$$$$$$$")
       }
       else if  (item.innerHTML == " Feito: False" ){
-        console.log("%%%%%%%%%%%%%%%%%%%%%")
         item.innerHTML = "Pendente";
         item.style.color = "red";
 
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
     item.innerHTML = item.innerHTML.split("-").reverse().join("/");
     }
     catch(err) {
-      console.log("DDDDDDDDDDDD");
+      console.log("erro");
 
     }
 });

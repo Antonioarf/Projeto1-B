@@ -7,8 +7,10 @@
   </div>
   <div>
   <form method="post" class="form-card">
+    <div>
     {% csrf_token %}
     {{ form.as_p }}
+  </div>
   <button class="btn" type="submit">Log In</button>
   <button class="btn"><a href="{% url 'signup' %}">Crie uma conta</a></button>
   </form>

@@ -8,7 +8,7 @@ from .serializers import NoteSerializer
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
-
+from rest_framework.authtoken.models import Token
 from django.contrib.auth import get_user_model
 
 
@@ -88,11 +88,12 @@ def index(request):
         try:
             user = request.user.username
             all_notes = Note.objects.filter(users = User.objects.get(username = user))
+            tok = Token.objects.get_or_create(user=request.user)
         except:
             all_notes = Note.objects.all()
-            # tok = Token.objects.get_or_create(user=request.user)
+            tok = Token.objects.get_or_create(user=request.user)
 
-        return render(request, 'notes/index.html', {'notes': all_notes})
+        return render(request, 'notes/index.html', {'notes': all_notes, 'token': tok[0]})
 
 #################################################
 
