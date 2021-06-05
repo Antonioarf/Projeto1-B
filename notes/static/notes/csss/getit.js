@@ -45,7 +45,6 @@ async function func4(){
   console.log(token);
 
   if (lista.data.includes(x)) {
-    console.log(options1)
     resp2 = await axios.post(`${window.location.href}api/share/` ,{nome :x, id :id  } , {headers: { token: token}})
     console.log("passou2")
     console.log(resp2)
