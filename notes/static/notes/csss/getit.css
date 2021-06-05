@@ -35,6 +35,15 @@ Algumas informações úteis e dicas:
   flex-direction: column;
   justify-content: center;
 } */
+
+/* ::-webkit-calendar-picker-indicator {
+  background-color: black;
+} */
+
+/* .testeee{
+  background-color: black;
+} */
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: black;
   opacity: 1; /* Firefox */

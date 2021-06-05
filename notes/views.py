@@ -47,12 +47,12 @@ class SignUpView(generic.CreateView):
 #################################################
 
 def index(request):
-    print("11111111111111111111")
-    teste =request.__dict__
-    print(teste.keys())
-    print(type(teste['user']))
-    User = get_user_model()
-    users = User.objects.all()
+    # print("11111111111111111111")
+    # teste =request.__dict__
+    # print(teste.keys())
+    # print(type(teste['user']))
+    # User = get_user_model()
+    # users = User.objects.all()
 
     if request.method == 'POST':
         title = request.POST.get('titulo')
@@ -91,8 +91,8 @@ def index(request):
             tok = Token.objects.get_or_create(user=request.user)
         except:
             all_notes = Note.objects.all()
-            tok = Token.objects.get_or_create(user=request.user)
-
+            # tok = Token.objects.get_or_create(user=request.user)
+            tok = "ainda nao autorizado"
         return render(request, 'notes/index.html', {'notes': all_notes, 'token': tok[0]})
 
 #################################################

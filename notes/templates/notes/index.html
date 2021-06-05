@@ -40,7 +40,7 @@
       <p id="tx2{{ note.id }}" onclick="func2('tx2{{ note.id }}','inp2{{ note.id }}','card{{ note.id }}')">{{ note.content }}</p>
     </div>
     Prazo:<h3 class='card-date' id="tx3{{ note.id }}" onclick="func1('tx3{{ note.id }}','inp3{{ note.id }}','card{{ note.id }}')">{{note.prazo}}</h3>
-    <div class="card-title-inp" id="inp3{{ note.id }}">Novo prazo: <input type="date" id="data" name="prazo" value="{{ note.prazo }}"> </div>
+    <div class="card-title-inp" id="inp3{{ note.id }}">Novo prazo: <input class="testeee" type="date" id="data" name="prazo" value="{{ note.prazo }}"> </div>
     <p class="card-contentdzb"> Dono(s): {%for nome in note.users.all%} {{ nome }} {% endfor %} </p>
 
     
