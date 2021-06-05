@@ -55,6 +55,8 @@ def index(request):
     # users = User.objects.all()
 
     if request.method == 'POST':
+        User = get_user_model()
+        users = User.objects.all()
         title = request.POST.get('titulo')
         content = request.POST.get('detalhes')
         tag = request.POST.get('tag')
@@ -86,6 +88,8 @@ def index(request):
         return redirect('index')
     else:
         try:
+            User = get_user_model()
+            users = User.objects.all()
             user = request.user.username
             all_notes = Note.objects.filter(users = User.objects.get(username = user))
             tok = Token.objects.get_or_create(user=request.user)
