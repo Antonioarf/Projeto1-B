@@ -122,18 +122,22 @@ def meio(request):
 
 
 def back_final(request):
+    user = request.user.username
+    User = get_user_model()
     print("33333333333333333333333333333333")
     if request.method == 'POST':
         tag = request.POST.get('tag')
         return redirect('final', tag = tag)
     else:
-        all_notes = Note.objects.all()
+        all_notes = Note.objects.filter(users = User.objects.get(username = user))
         return render(request, 'notes/final.html', {'notes': all_notes})
         # .filter(user = user)
 
 #################################################
 
 def carrega(request,tag):
+    user = request.user.username
+    User = get_user_model()
     print("444444444444444444444444444444444444")
     if request.method == 'POST':
         title = request.POST.get('titulo')
@@ -160,7 +164,7 @@ def carrega(request,tag):
             Note.objects.create(title = title,content = content, tag = tag)
         return redirect('final', tag = tag)
     else:
-        all_notes = Note.objects.filter(tag = tag).all()
+        all_notes = Note.objects.filter(users = User.objects.get(username = user)).filter(tag = tag).all()
         return render(request, 'notes/final.html', {'notes': all_notes, "tagg": tag})
 
 #################################################
