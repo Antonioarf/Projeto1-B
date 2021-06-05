@@ -3,7 +3,10 @@
   opacity: 1; /* Firefox */
 }
 body {
-  background-color: #847C7C;
+  background-color: #9593d9;
+}
+input {
+  background-color: #9593d9;
 }
 .appbar{
   left: 5%;
@@ -13,7 +16,7 @@ body {
   display: flex;
   align-items: center;
   box-shadow: 1px 0px 20px black;
-  background-color: #B72936;
+  background-color: #e0afa0;
 }
 .logo{
   margin: 0.5rem;
@@ -43,8 +46,9 @@ body {
   outline: none;
   border-radius: 7px;
   /* box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2); */
-  background-color: #B72936;
-
+  background-color: #7C90DB;
+  border: black;
+  border-style: solid;
   transition: background-color 0.3s;
 }
 .btn > * {
