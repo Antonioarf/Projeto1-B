@@ -103,11 +103,14 @@ def index(request):
 
 def meio(request):
     print("22222222222222222222222222222222")
+    user = request.user.username
+    User = get_user_model()
     if request.method == 'POST':
         tag = request.POST.get('tag')
         return redirect('lista')
     else:
-        lista = Note.objects.values_list("tag", flat = True).distinct()
+        lista = Note.objects.filter(users = User.objects.get(username = user)).values_list("tag", flat = True).distinct()
+        print(lista)
         if len(lista)==0:
             erros = "Nenhuma Tag Criada"
         else:
