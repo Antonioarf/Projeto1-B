@@ -251,24 +251,27 @@ textarea {
 
 
 .card-color-1{
-  background:#7C90DB;
+  background:#C4DACF;
   
 }
 
 .card-color-2{
-  background:#7C90DB;
+  background:#C4DACF;
 }
 
 .card-color-3{
+  /* background:#7C90DB; */
   background:#C4DACF;
 }
 
 .card-color-4{
-  background:#C4E7D4;
+  /* background:#7C90DB; */
+  background:#C4DACF;
 }
 
 .card-color-5{
-  background:#736b92;
+  /* background:#736b92; */
+  background:#C4DACF;
 }
 
 .card-rotation-1{
