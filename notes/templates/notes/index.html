@@ -26,7 +26,7 @@
 <button class="btn" type="submit">Filtrar Por Tag</button>
 </form>
 </div>
-<div class="card-container">
+<div class="card-container" >
   {% for note in notes %}
   
   <div class="card" id="card{{ note.id }}" >
@@ -35,20 +35,22 @@
 
     <h3 class="card-title" id="tx1{{ note.id }}" onclick="func1('tx1{{ note.id }}','inp1{{ note.id }}','card{{ note.id }}')" >{{ note.title }}</h3>
     <input class="card-title-inp" type="text" name="titulo" value="{{ note.title }}" id="inp1{{ note.id }}"/>
-    <input class="card-title-inp" type="text" name="detalhes" value="{{ note.content }}"id="inp2{{ note.id }}"/>
     <div class="card-content">
-      <p id="tx2{{ note.id }}" onclick="func2('tx2{{ note.id }}','inp2{{ note.id }}','card{{ note.id }}')">{{ note.content }}</p>
+      <p class="corpo_card" id="tx2{{ note.id }}" onclick="func2('tx2{{ note.id }}','inp2{{ note.id }}','card{{ note.id }}')">{{ note.content }}</p>
     </div>
-    Prazo:<h3 class='card-date' id="tx3{{ note.id }}" onclick="func1('tx3{{ note.id }}','inp3{{ note.id }}','card{{ note.id }}')">{{note.prazo}}</h3>
+    <input class="card-title-inp" type="text" name="detalhes" value="{{ note.content }}"id="inp2{{ note.id }}"/>
+    <br>
+    <h3 class='card-date' id="tx3{{ note.id }}" onclick="func1('tx3{{ note.id }}','inp3{{ note.id }}','card{{ note.id }}')">Prazo: {{note.prazo}}</h3>
     <div class="card-title-inp" id="inp3{{ note.id }}">Novo prazo: <input class="testeee" type="date" id="data" name="prazo" value="{{ note.prazo }}"> </div>
-    <p class="card-contentdzb"> Dono(s): {%for nome in note.users.all%} {{ nome }} {% endfor %} </p>
+    <br>
+    <p class="card-contentdzb">{%for nome in note.users.all%} {{ nome }} {% endfor %}</p>
 
     
     
     <div class="div_botao">
       <button class="botao1" type="submit" name="atualizar" value="{{ note.id }}" id="update">Atualizar</button>
       <button class="botao1" type="submit" name= "apagar" value="{{ note.id }}">Apagar</button>
-      <button class="botao1" type="button" name= "share" value="{{ note.id }}" onclick="func3('{{ note.id }}')" >Share</button>
+      <button class="botao1 bot_share" type="button" name= "share" value="{{ note.id }}" onclick="func3('{{ note.id }}')" >Share</button>
       <button class="botao1 botao_mudar" type="submit" name= "status" value="{{ note.id }}"> Feito: {{note.feito}}</button>
     </div>
       </form>
@@ -62,11 +64,25 @@
   <h1>Cuidado: campo sensivel a letras maiuscuas</h1>
   <input class="form-card-title" type="text" name="usuario" placeholder="Usuario"/>
   <input type="hidden" id="idid" name="custId" value="">
+  <div class="espaco">
   <button class="btn share" type="button" onclick="func4()">Compartilhar</button>
+  <button class="btn share" type="button" onclick="func5()">Cancelar</button>
+  </div>
   <input type="submit" disabled name="proseguir" class='sumir'>
 </form>
 
+<div class="form-card popup" id="myPopup2" name="myForms" >
+  <h1 id="status">  </h1>
+  <br>
+  <br>
+  <br>
+  <br>  
+  <button class="btn share" type="button" onclick="func5()">fechar</button>
+
+</div>
+
 <p id="nomee" class="sumir">{{user.username}}</p>
 <p id="token" class="sumir">{{ token }}</p>
+<p id="apareceu" ></p>
 {% endblock %}
 

@@ -25,16 +25,17 @@ function func2(nome1,nome2,nome3){
 }
 
 function func3(inp){
+  
   document.getElementById("myPopup").style.display = 'block';
   // document.getElementById("myPopup").className += ` ${document.getElementById(`card${inp}`).className.split(" ")[1]}`;
   document.getElementById("idid").value = inp;
   console.log(inp);
   console.log(document.getElementById("myPopup").className);
-  console.log()
+  setTimeout(() => {  document.getElementById("apareceu").innerHTML = 'true'; }, 500);
 }
 
 async function func4(){
-  console.log("12345678901234567890")
+  console.log("5555555555555555555555555555555555555555555")
   lista = await axios.get(`${window.location.href}api/users/` ); //requisicao da lista de usuarios
   console.log(lista.data)
   var x = document.forms["myForms"]["usuario"].value; //pra quem vai ser compartilhado
@@ -48,18 +49,28 @@ async function func4(){
     resp2 = await axios.post(`${window.location.href}api/share/` ,{nome :x, id :id  } , {headers: { token: token}})
     console.log("passou2")
     console.log(resp2)
-    alert("Nota compartilhada com sucesos")
-    document.getElementById("myPopup").style.display = 'none';
+    document.getElementById('status').innerHTML = "Nota compatilhada com sucesso!" ; //usuario compartilhando
+    document.getElementById("myPopup2").style.display = 'block';
+
+
 
   }
   else {
+    // document.getElementById('status').innerHTML = "Nota compatilhada com sucesso!" ; //usuario compartilhando
     alert("Usuario nao encontrado");
     return false;
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+function func5(){
+  document.getElementById("myPopup2").style.display = 'none';
+  document.getElementById("myPopup").style.display = 'none';
+  document.getElementById("apareceu").innerHTML = 'false';
 
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  
   // Faz textarea aumentar a altura automaticamente
   // Fonte: https://www.geeksforgeeks.org/how-to-create-auto-resize-textarea-using-javascript-jquery/#:~:text=It%20can%20be%20achieved%20by,height%20of%20an%20element%20automatically.
   let textareas = document.getElementsByClassName("autoresize");
@@ -80,25 +91,36 @@ document.addEventListener("DOMContentLoaded", function () {
     card.className += ` card-color-${getRandomInt(
       1,
       5
-    )} card-rotation-${getRandomInt(1, 6)}`;
+    )} `;
   }
   console.log("testeeeeee")
 
   let botoes = document.getElementsByClassName("botao_mudar");
   Array.prototype.forEach.call(botoes, function(item) {
-    console.log("@@@@@@@@@@@@@@@@@@@@")
       if  (item.innerHTML == " Feito: True" ){
         item.innerHTML = "Concluido";
         item.style.color = "blue";
-        console.log("$$$$$$$$$$$$$$$$$$$")
       }
       else if  (item.innerHTML == " Feito: False" ){
-        console.log("%%%%%%%%%%%%%%%%%%%%%")
         item.innerHTML = "Pendente";
         item.style.color = "red";
 
       }
-  });
+  }); 
+
+  let contentes = document.getElementsByClassName("corpo_card");
+  Array.prototype.forEach.call(contentes, function(item) {
+      console.log("333333333333333333333333333333333333")
+      if  (item.innerHTML == "" ){
+        console.log("@@@@@@@@@@@@@@@@@@@@")
+        item.innerHTML = "nota sem corpo"
+      }
+      else{
+        console.log(item.innerHTML)
+      }
+
+  }); 
+
 
   let dates = document.getElementsByClassName("card-date");
 
@@ -110,6 +132,27 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("DDDDDDDDDDDD");
 
     }
+});
+
+// document.getElementById('cardcont').addEventListener("click", function(){
+//   console.log("clicou");
+// });
+var ignortar = document.getElementById('myPopup');
+
+
+document.addEventListener('click', function(event) {
+  if (document.getElementById("apareceu").innerHTML == 'true'){ 
+
+    var isClickInsideElement = ignortar.contains(event.target);
+    if (!isClickInsideElement) {
+        //Do something click is outside specified element
+        document.getElementById("myPopup").style.display = 'none';
+        document.getElementById("myPopup2").style.display = 'none';
+
+        console.log("clicou");
+        document.getElementById("apareceu").innerHTML = 'false';
+
+    }}
 });
 
 

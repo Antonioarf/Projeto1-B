@@ -43,6 +43,9 @@ Algumas informações úteis e dicas:
 /* .testeee{
   background-color: black;
 } */
+.espaco{
+  margin-top: 5%;
+}
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: black;
@@ -166,6 +169,7 @@ textarea {
 }
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 .card{
+  padding: 1%;
   font-family: 'Permanent Marker', cursive;
   width:17%;
   margin-top: 5%;
@@ -175,6 +179,8 @@ textarea {
   flex-direction:column;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.4);
   justify-content: space-between;
+  /* border: black;
+  border-style: ridge; */
 }
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 .card-title{
@@ -216,13 +222,13 @@ textarea {
 .botao1{
   /* border: 3px; */
   border-radius: 5px;
-  width: 50%;
+  width: 90%;
   color: #2c2c2c;
   font-weight: bold;
   font-family: 'Permanent Marker', cursive;
   background-color: transparent;
-  /* border: black;
-  border-style: ridge; */
+  border: black;
+  border-style: ridge;
 }
 .div_botao{
   display: flex;
@@ -341,7 +347,7 @@ textarea {
 
 .popup{
   width: 20%;
-  height: 150px;
+  height: 175px;
   display: none;
   position: fixed; /* or absolute */
   top: 50%;

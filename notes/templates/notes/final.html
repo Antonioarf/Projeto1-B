@@ -61,9 +61,18 @@
   <h1>Cuidado: campo sensivel a letras maiuscuas</h1>
   <input class="form-card-title" type="text" name="usuario" placeholder="Usuario"/>
   <input type="hidden" id="idid" name="custId" value="">
+  <div class="espaco">
   <button class="btn share" type="button" onclick="func4()">Compartilhar</button>
+  <button class="btn share" type="button" onclick="func5()">Cancelar</button>
+  </div>
   <input type="submit" disabled name="proseguir" class='sumir'>
 </form>
+
+<div class="form-card popup" id="myPopup2" name="myForms" >
+  <h2 id="status">  </h2>
+  <button class="btn share" type="button" onclick="func5()">fechar</button>
+
+</div>
 
 <p id="nomee" class="sumir">{{user.username}}</p>
 <p id="token" class="sumir">{{ token }}</p>

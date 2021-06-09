@@ -48,8 +48,9 @@ async function func4(){
     resp2 = await axios.post(`${window.location.href}api/share/` ,{nome :x, id :id  } , {headers: { token: token}})
     console.log("passou2")
     console.log(resp2)
-    alert("Nota compartilhada com sucesos")
+
     document.getElementById("myPopup").style.display = 'none';
+    document.getElementById("myPopup2").style.display = 'block';
 
   }
   else {
