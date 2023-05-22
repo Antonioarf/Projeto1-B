@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - sudo apt update
+      - sudo apt install python3-dev libpq-dev python3-pip -y
+  pre_build:
+    commands:
+      - pip install -r requirements.txt
+  build:
+    commands:
+      - python3 manage.py migrate
