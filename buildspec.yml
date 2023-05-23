@@ -5,6 +5,7 @@ phases:
     runtime-versions:
       python: 3.8
     commands:
+      - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
       - sudo apt update
       - sudo apt install python3-dev libpq-dev python3-pip -y
   pre_build:
