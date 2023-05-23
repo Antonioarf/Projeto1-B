@@ -9,3 +9,4 @@
   ### 5) python3 manage.py runserver
   ### O projeto devera estar disponivel no endereço http://127.0.0.1:8000
 
+teste 1
