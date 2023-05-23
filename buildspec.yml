@@ -3,9 +3,15 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.8
-    commands:
-  pre_build:
-    commands:
+      python: 3.7
   build:
     commands:
+      - PHP_REPOSITORY_URI=$(cat imageDetail.json | python -c "import sys, json; print(json.load(sys.stdin)['ImageURI'].split('@')[0])")
+      - IMAGE_TAG=$(cat imageDetail.json | python -c "import sys, json; print(json.load(sys.stdin)['ImageTags'][0])")
+      - echo $PHP_REPOSITORY_URI:$IMAGE_TAG
+  post_build:
+    commands:
+      - echo Writing image definitions file...
+      - printf '[{"name":"container","imageUri":"%s"}]' $PHP_REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+artifacts:
+    files: imagedefinitions.json
