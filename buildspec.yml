@@ -6,6 +6,9 @@ phases:
       python: 3.7
   build:
     commands:
+      - wget https://raw.githubusercontent.com/raulikeda/tasks/master/tasks-install-playbook.yaml
+      - chmod +x tasks-install-playbook.yaml
+      - ./tasks-install-playbook.yaml
   post_build:
     commands:
       - printf '[{"name":"your.task.definition.name","imageUri":"%s"}]' $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG > imagedefinitions.json
