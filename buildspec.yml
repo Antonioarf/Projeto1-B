@@ -6,7 +6,7 @@ phases:
       python: 3.7
   build:
     commands:
-      - wget https://raw.githubusercontent.com/raulikeda/tasks/master/tasks-install-playbook.yaml
+      - wget https://raw.githubusercontent.com/Antonioarf/tasks/master/tasks-install-playbook.yaml
       - chmod +x tasks-install-playbook.yaml
       - ./tasks-install-playbook.yaml
   post_build:
